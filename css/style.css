@@ -1,0 +1,412 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Eligiendo fuente */
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+/* Estilo al header */
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 2px solid #5A352A;
+    height: 100px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #5A352A;
+}
+
+header nav ul li {
+    display: inline-block;
+    list-style-type: none;
+    margin-right: 20px;
+}
+
+header nav ul a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: #A6A57A;
+
+}
+
+/*  Imagen Fondo0 */
+.imagenFondo {
+    background-image: url(../images/porcelana-ceramica.jpg);
+    background-size: cover;
+    width: 100%;
+    border-bottom: #5A352A 2px solid;
+    height: calc(100vh - 100px);
+}
+
+/* Galeria grande */
+.galeria {
+    margin-top: 50px;
+    display: grid;
+    grid-template-areas:
+        "galeriaG galeriaC galeriaC";
+}
+
+.galeriaGrande {
+    grid-area: galeriaG;
+    margin-bottom: 50px;
+
+}
+
+.galeriaGrande img {
+    border: #5A352A 1px solid;
+    box-shadow: 2px 2px 10px;
+    height: 315px;
+    width: 450px;
+    margin-left: 55px;
+    margin-right: 100px;
+}
+
+/* Galeria Chica */
+.galeriaChica {
+    grid-area: galeriaC;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.galeriaChica img {
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 10px;
+    border: #5A352A solid 1px;
+    margin: 5px;
+    width: 250px;
+    height: 150px;
+}
+
+/* Cajas */
+.cajas {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    grid-area: cajas;
+}
+
+.cajitas {
+    border: 1px solid #5A352A;
+    border-radius: 4px;
+    box-shadow: 2px 2px 10px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.cajitas h2 {
+    color: #5A352A;
+    margin-bottom: 10px;
+}
+
+.cajitas p {
+    color: #8a896d;
+}
+
+/* Formulario */
+.formulario {
+    border: #5A352A 2px solid;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    grid-area: form;
+    min-width: 350px;
+}
+
+.form h2 {
+    color: #5A352A;
+    text-align: center;
+    margin: 10px;
+}
+
+.form .inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.form .inputs input {
+    border: #5A352A 1px solid;
+    margin: 10px;
+    padding: 5px;
+}
+
+.form .textarea {
+    display: flex;
+    justify-content: center;
+}
+
+.form .textarea textarea {
+    border: #5A352A solid 1px;
+    margin: 10px;
+}
+
+/*  Caja info */
+.info {
+    margin: 20px;
+    grid-area: info;
+}
+
+.info h2 {
+    color: #5A352A;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.info p {
+    color: #5A352A;
+}
+
+/* Contacto= info + formulario */
+
+.infoPadre {
+    display: grid;
+    grid-template-areas:
+        "form form info";
+}
+
+/* Dandole estilo al footer */
+.footerPadre {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-top: 2px solid #5A352A;
+    grid-area: footer;
+    height: 100px;
+}
+
+footer ul {
+    list-style-type: none;
+    color: #8a896d;
+}
+
+footer h3 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #5A352A;
+    font-size: 1.5rem;
+}
+
+
+/* Aplicando media queri */
+
+@media screen and (max-width: 480px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    header nav ul a {
+        display: none;
+    }
+
+    .galeria {
+        grid-template-areas:
+            "galeriaG galeriaG"
+            "galeriaC galeriaC";
+    }
+
+    .galeriaGrande img {
+        margin-left: 20px;
+        max-width: 90%;
+    }
+
+    .galeriaChica img {
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+    }
+
+    .cajas {
+        flex-wrap: wrap;
+    }
+
+    .infoPadre {
+        display: grid;
+        grid-template-areas:
+            "info info"
+            "form form";
+    }
+
+    .formulario {
+        margin-left: 10px;
+        min-width: 90%
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 1023px) {
+    .galeria {
+        grid-template-areas:
+            "galeriaG galeriaG"
+            "galeriaC galeriaC";
+    }
+
+    .galeriaGrande img {
+        min-width: 70%;
+        margin-left: 15%;
+    }
+
+    .cajas {
+        flex-wrap: wrap;
+    }
+
+    .infoPadre {
+        display: grid;
+        grid-template-areas:
+            "info info"
+            "form form";
+    }
+
+}
+
+
+/* Estilo a productos.html */
+
+.padreProductos h2 {
+    color: #5A352A;
+    text-decoration: underline;
+    text-align: center;
+    margin: 20px;
+}
+
+.padreProductos .productosUno {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.padreProductos .productosUno .prod {
+    margin-right: 70px;
+    margin-left: 70px;
+}
+
+.padreProductos .productosUno .prod img {
+    width: 200px;
+    height: 170px;
+    border: solid 1px #5A352A;
+    margin-top: 40px;
+}
+
+.padreProductos .productosUno .prod a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #5A352A;
+    color: white;
+    width: 190px;
+    height: 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    padding: 5px;
+    box-shadow: 2px 2px 5px;
+}
+
+/* Estilo a item.html */
+.item {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-areas:
+        "galeriaVert imga detalle";
+}
+
+.detalle {
+    border: #5A352A 1px solid;
+    padding: 10px;
+    grid-area: detalle;
+    margin-right: 20px;
+}
+
+.detalle h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.galeriaVertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    grid-area: galeriaVert;
+    margin: 20px;
+}
+
+.galeriaVertical img {
+    width: 100px;
+    border: #5A352A 1px solid;
+}
+
+.imga {
+    grid-area: imga;
+}
+
+.imga img {
+    width: 400px;
+    margin-left: 100px;
+    margin-right: 50px;
+}
+
+.comprar {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px;
+    margin-top: 30px;
+    background-color: #5A352A;
+    color: white;
+    border-radius: 10px;
+    width: fit-content;
+}
+
+/* Media queri para item.html */
+
+@media screen and (max-width: 480px) {
+    .galeriaVertical{
+        display: none;
+    }
+    .item{
+        display: grid;
+        grid-template-areas: 
+        "imga imga"
+        "detalle detalle";
+    }
+    .imga img{
+        width: 300px;
+        margin-left: 40px;
+        margin-bottom: 20px;
+        border: #5A352A 1px solid;
+    }
+    .detalle{
+        max-width: 90%;
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 1023px) {
+    .item{
+        display: grid;
+        grid-template-areas: 
+        "imga detalle" 
+        "galeriaVert detalle";
+    }
+    .galeriaVertical{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+    }
+}

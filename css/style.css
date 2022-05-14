@@ -213,7 +213,8 @@ footer h3 {
     }
 
     header nav ul a {
-        display: none;
+        font-size: 01.5rem;
+        margin: 10px;
     }
 
     .galeria {
